@@ -23,10 +23,27 @@ The purpose is to evaluate machine learning models for predicting credit card ri
 * Balanced Random Forest Classifier using BalancedRandomForestClassifier
   * ![image](https://user-images.githubusercontent.com/24308495/151685587-804e32c0-7fc9-421c-a869-83546d940574.png)
   * ![image](https://user-images.githubusercontent.com/24308495/151685594-d3519fb4-2b73-4b4a-9d88-6d995c791446.png)
-* Easy Ensemble AdaBoost Classifier using Easy Ensemble Classifier 
+* Easy Ensemble AdaBoost Classifier using EasyEnsembleClassifier 
   * ![image](https://user-images.githubusercontent.com/24308495/151685637-5e6556f6-e312-4a5d-84a5-f1bc8323a251.png)
   * ![image](https://user-images.githubusercontent.com/24308495/151685645-b8dadfad-f1b0-497e-8832-9c6041358992.png)
 
 
 ## Summary
+
+### Results
+
+#### Precision
+The precision for high risk loans was extremely low with all models. Random RandomOverSampler, SMOTE, ClusterCentroids and SMOTEENN algorthms all had a 0.01 score. The machine learning models had marginally better succes with BalancedRandomForestClassifier having a 0.03 score and the EasyEnsembleClassifier with a 0.09 score.
+
+The precision for low risk loans was excellence across the board, with each one having a 1.00 score.
+
+#### Recall
+Recall scores varied drastically with all models. Random RandomOverSampler, SMOTE, ClusterCentroids and SMOTEENN, in general, faired poorer than the machine learning models. RandomOverSampler, SMOTE, ClusterCentroids and SMOTEENN had recall scores that for high risk loans that ranged between 0.61 and 0.78 and scores for low risk loans that ranged between 0.40 and 0.70.
+
+The machine learning models generally faired better, with BalancedRandomForestClassifier having a recall score of 0.70 for high risk loans and a score of 0.87 for low risk loans. The EasyEnsembleClassifier performed the best with a recall score of 0.89 for high risk loans and a score of 0.95 for low risk loans.
+
+### Recommendation
+The best way to compare the models is by looking at the F1 scores. The best average F1 score was 0.97 from the EasyEnsembleClassifier model, with the BalancedRandomForestClassifier having an average F1 score of 0.93. The rest of the models average F1 scores ranged between 0.56 and 0.82.
+
+The best model based on F1 score is the EasyEnsembleClassifier. The only issue with this model is the precision score of 0.09 for high risk loans. However, the recall score of 0.89 leads me to believe high risk loans won't be a signficant problem, despite the lack of precision.
 
